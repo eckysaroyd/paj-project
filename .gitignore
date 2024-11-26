@@ -1,0 +1,8 @@
+# .gitignore for Laravel + Ionic
+node_modules/
+vendor/
+.env
+.DS_Store
+npm-debug.log
+.idea/
+/www
