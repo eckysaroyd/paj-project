@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <h2>Welcome Back</h2>
+    <p>Please enter your credentials to log in</p>
+
+    <form (ngSubmit)="onLogin()">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input 
+          [(ngModel)]="email" 
+          name="email" 
+          type="email" 
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input 
+          [(ngModel)]="password" 
+          name="password" 
+          type="password" 
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" [disabled]="!email || !password" class="login-button">
+        <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+        <span *ngIf="!isLoading">Login</span>
+      </ion-button>
+
+      <!-- Display error message if loginError is set -->
+      <ion-text color="danger" *ngIf="loginError">
+        <p class="error-message">{{ loginError }}</p>
+      </ion-text>
+    </form>
+  </div>
+</ion-content>
