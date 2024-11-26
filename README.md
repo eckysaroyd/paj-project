@@ -10,50 +10,84 @@
 - [About the Project](#about-the-project)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Running the Project](#running-the-project)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ---
 
 ## **About the Project**
 
-PAJ Project is a powerful and user-friendly tracking application designed to help users manage and monitor specific activities. This tool is ideal for users who need a reliable and efficient way to track and visualize data for better management and decision-making.
+The **PAJ Project** is a dual-application system designed for efficient tracking and monitoring. It comprises:
+
+- **Frontend**: An Ionic-based mobile application for cross-platform use.
+- **Backend**: A Laravel-based API server for managing data and handling business logic.
+
+This setup offers a seamless user experience for data visualization and tracking purposes.
+
+---
 
 ## **Features**
 
-- **Backend in Laravel App**:  
-  The backend is built using Laravel, a PHP framework, providing a robust API for data management, business logic, and seamless communication with the frontend.
+- **Cross-Platform Frontend**: Responsive design built with Ionic for Android and iOS devices.
+- **Robust Backend**: Developed using Laravel to provide secure and efficient APIs.
+- **Real-Time Tracking**: Integration with location tracking services to visualize data on maps.
+- **Scalable Architecture**: Designed to accommodate future feature enhancements and scaling needs.
 
-- **Frontend in Ionic App**:  
-  The frontend is developed with Ionic, a framework for building cross-platform mobile apps using web technologies. It offers a responsive user interface and smooth user experience for both Android and iOS devices.
+---
 
 ## **Technologies Used**
 
-- **Backend**: PHP, Laravel
-- **Frontend**: Ionic, Vue.js, React.js
-- **Database**: MySQL, PostgreSQL
+- **Frontend**: Ionic, Angular
+- **Backend**: Laravel (PHP)
+- **Database**: MySQL (or any other supported by Laravel)
+- **API Integration**: RESTful API
 - **Version Control**: Git, GitHub
-- **Others**: Docker, AWS, API integrations
+- **Deployment**: Vercel
+
+---
+
+## **Project Structure**
+
+```
+paj-project/
+│
+├── paj-tracking/         # Your Ionic (frontend) app
+│   ├── src/              # Source code
+│   ├── node_modules/     # Node.js dependencies
+│   ├── package.json      # Project dependencies and scripts
+│   ├── ...
+│   └── README.md         # Frontend-specific README
+│
+└── paj-tracking-app/     # Your Laravel (backend) app
+    ├── app/              # Application logic
+    ├── public/           # Public files (entry point)
+    ├── routes/           # API and web routes
+    ├── composer.json     # PHP dependencies
+    ├── ...
+    └── README.md         # Backend-specific README
+```
+
+---
 
 ## **Getting Started**
 
-This section provides instructions on setting up the project locally for development and testing.
+Follow these steps to set up the project locally.
 
 ### **Prerequisites**
 
-Ensure you have the following software installed:
+Make sure you have the following installed:
 
-- [Git](https://git-scm.com/downloads)
-- [Node.js](https://nodejs.org/) and npm
-- [Composer](https://getcomposer.org/) (for PHP/Laravel)
-- [Docker](https://www.docker.com/) (if applicable)
+- [Node.js and npm](https://nodejs.org/)
+- [Composer](https://getcomposer.org/)
+- [Git](https://git-scm.com/)
+- A web server (e.g., XAMPP, Laravel Valet, or Docker)
+
+---
 
 ### **Installation**
 
@@ -63,86 +97,47 @@ Ensure you have the following software installed:
    cd paj-project
    ```
 
-2. **Install dependencies**:
-   - **Node.js**:
-     ```bash
-     npm install
-     ```
-   - **PHP (Composer)**:
-     ```bash
-     composer install
-     ```
-
-3. **Set up environment variables**:
-   - Create a `.env` file in the root directory.
-   - Add your environment variables (e.g., database configuration).
-
-4. **Database setup**:
+2. **Set up the backend**:
    ```bash
+   cd paj-tracking-app
+   composer install
+   cp .env.example .env
+   php artisan key:generate
    php artisan migrate
    ```
 
+3. **Set up the frontend**:
+   ```bash
+   cd ../paj-tracking
+   npm install
+   ```
+
+---
+
 ### **Running the Project**
 
-- **Development**:
+- **Backend (Laravel):**
   ```bash
-  npm run dev
+  cd paj-tracking-app
   php artisan serve
   ```
+  The backend will be available at `http://127.0.0.1:8000`.
 
-- **Production**:
+- **Frontend (Ionic):**
   ```bash
-  npm run build
+  cd paj-tracking
+  ionic serve
   ```
+  The frontend will be available at `http://localhost:8100`.
+
+---
 
 ## **Usage**
 
-Once the project is running, navigate to `http://localhost:8000` to view the dashboard. Use the following demo credentials for testing purposes:
+1. Navigate to the Ionic app in your browser or mobile device.
+2. Log in using valid credentials (e.g., demo accounts if configured).
+3. View and manage tracked devices in real time.
 
-- **Username**: testkunde@paj-gps.de
-- **Password**: App123###...
-
-Screenshots and detailed usage instructions can be added here to guide the users.
-
-## **Project Structure**
-
-```
-paj-project/
-│
-├── public/           # Public files (CSS, JavaScript)
-├── src/              # Source code
-│   ├── components/   # Vue.js/React.js components
-│   ├── views/        # Page views
-│   ├── assets/       # Images, styles, etc.
-│   └── ...
-├── routes/           # API routes (for backend projects)
-├── .env.example      # Example environment configuration
-├── README.md         # This README file
-└── ...
-```
-
-## **Contributing**
-
-To contribute to the project:
-
-1. **Fork the repository**
-2. **Create a branch**:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. **Commit your changes**:
-   ```bash
-   git commit -m "Add a feature"
-   ```
-4. **Push to the branch**:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-5. **Open a Pull Request** for review.
-
-## **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## **Contact**
 
