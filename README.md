@@ -99,8 +99,8 @@ Ensure you have the following software installed:
 
 Once the project is running, navigate to `http://localhost:8000` to view the dashboard. Use the following demo credentials for testing purposes:
 
-- **Username**: demo@example.com
-- **Password**: password123
+- **Username**: testkunde@paj-gps.de
+- **Password**: App123###...
 
 Screenshots and detailed usage instructions can be added here to guide the users.
 
