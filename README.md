@@ -85,7 +85,6 @@ Make sure you have the following installed:
 - [Node.js and npm](https://nodejs.org/)
 - [Composer](https://getcomposer.org/)
 - [Git](https://git-scm.com/)
-- A web server (e.g., XAMPP, Laravel Valet, or Docker)
 
 ---
 
@@ -103,7 +102,6 @@ Make sure you have the following installed:
    composer install
    cp .env.example .env
    php artisan key:generate
-   php artisan migrate
    ```
 
 3. **Set up the frontend**:
@@ -143,7 +141,7 @@ Make sure you have the following installed:
 
 Feel free to reach out for any questions or support.
 
-- **Name**: [Your Name]
+- **Name**: Eckysaroyd.
 - **GitHub**: [https://github.com/eckysaroyd](https://github.com/eckysaroyd)
 - **Portfolio**: [https://eckysaroyd.vercel.app/](https://eckysaroyd.vercel.app/)
 - **Email**: [your-email@example.com](mailto:your-email@example.com)
