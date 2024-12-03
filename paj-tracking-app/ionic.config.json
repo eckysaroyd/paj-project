@@ -1,0 +1,7 @@
+{
+  "name": "paj-tracking-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
